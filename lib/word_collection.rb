@@ -2,7 +2,7 @@ class WordCollection
   
   # WORDS = []
   # # File.open(File.dirname(__FILE__) + "/Words/en.txt")
-  File.open(File.dirname(__FILE__) + "en.txt") do |file|
+  File.open(File.dirname(__FILE__) + "/en.txt") do |file|
     file.each do |line|
       WORDS << line.strip
     end
