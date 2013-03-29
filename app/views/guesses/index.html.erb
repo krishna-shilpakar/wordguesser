@@ -1,0 +1,39 @@
+<%= form_tag "/search", method: :get, class: "search_form" do %>
+<div class="row">
+<%= text_field_tag "letter", params[:letter], class: 'input-large span4', placeholder: "letters" %>
+<%= text_field_tag "count", params[:count], class: "input-small", maxlength: 1, placeholder: "3" %>
+</div>
+<div class="row">&nbsp;</div>
+<div class="row">
+  <%= submit_tag "Find Words", id: 'search', class: "btn-large btn-primary" %>
+</div>
+<% end %>
+
+<% if params[:letter] && params[:count] %>
+<div class="row">
+  <h3>Guesses</h3>
+</div>
+<div class="row result">
+  <span><b><%= pluralize(@guess_words.count, "Result") %></b> found for <b><%= params[:letter] %></b> with combination <b><%= params[:count] %></b>
+</div>
+<% if @guess_words.count > 0 %>
+<div class="row">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Words</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @guess_words.each_with_index do |w, i| %>
+      <tr>
+        <td><%= i+1 %></td>
+        <td><%= w %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<% end %>
+<% end %>
