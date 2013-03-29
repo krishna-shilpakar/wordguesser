@@ -1,6 +1,6 @@
 class WordCollection
   
-  # WORDS = []
+  WORDS = []
   # # File.open(File.dirname(__FILE__) + "/Words/en.txt")
   File.open(File.dirname(__FILE__) + "/en.txt") do |file|
     file.each do |line|
