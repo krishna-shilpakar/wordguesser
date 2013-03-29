@@ -1,12 +1,12 @@
 class WordCollection
   
-  WORDS = []
-  # File.open(File.dirname(__FILE__) + "/Words/en.txt")
-  File.open(File.dirname(__FILE__) + "/Words/en.txt") do |file|
-    file.each do |line|
-      WORDS << line.strip
-    end
-  end
+  # WORDS = []
+  # # File.open(File.dirname(__FILE__) + "/Words/en.txt")
+  # File.open(File.dirname(__FILE__) + "/Words/en.txt") do |file|
+  #   file.each do |line|
+  #     WORDS << line.strip
+  #   end
+  # end
   attr_reader :matched_words
   
   def initialize(string)
